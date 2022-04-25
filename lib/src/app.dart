@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:music_player/src/utils/pallete.dart';
 import 'package:music_player/src/views/list_audio/list_audio.view.dart';
 
@@ -7,7 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'MusicPlayer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

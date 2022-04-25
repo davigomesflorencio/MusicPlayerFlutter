@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:music_player/src/models/mp3_model.dart';
-import 'package:music_player/src/utils/helpers.dart';
 import 'package:music_player/src/views/details/details_audio.view.dart';
 
 class Mp3Item extends StatelessWidget {
@@ -35,13 +35,8 @@ class Mp3Item extends StatelessWidget {
                 size: 30,
               ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsAudio(mp3model: mp3File),
-                  ),
-                );
-                Helpers.showSnack(ctx, mp3File.path);
+                Get.to(DetailsAudio(mp3model: mp3File));
+                Get.snackbar("Path", mp3File.path);
               },
             ),
           ),

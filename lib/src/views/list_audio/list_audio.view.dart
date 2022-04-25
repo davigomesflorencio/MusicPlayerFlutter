@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:music_player/src/models/data_model.dart';
 import 'package:music_player/src/models/mp3_model.dart';
-import 'package:music_player/src/utils/pallete.dart';
 import 'package:music_player/src/widgets/mp3_item.widget.dart';
 
 class ListAudio extends StatefulWidget {
