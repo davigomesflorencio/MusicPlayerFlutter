@@ -8,27 +8,27 @@ class TextStyleMusic {
   );
 
   static const TextStyle kPrimaryBoldTextStyle = TextStyle(
-    color: Colors.black,
+    color: Colors.white,
     fontSize: 20.0,
     fontWeight: FontWeight.bold,
     fontFamily: "roboto",
   );
 
   static const TextStyle kSecondaryTextStyle = TextStyle(
-    color: Colors.black,
+    color: Colors.white,
     fontSize: 16.0,
     fontFamily: "roboto",
   );
 
   static const TextStyle kSecondaryBoldTextStyle = TextStyle(
-    color: Colors.black,
+    color: Colors.white,
     fontSize: 16.0,
     fontWeight: FontWeight.bold,
     fontFamily: "roboto",
   );
 
   static const TextStyle kFloatingButtonTextStyle = TextStyle(
-    color: Colors.black,
+    color: Colors.white,
     fontSize: 16.0,
     fontFamily: "roboto",
   );
