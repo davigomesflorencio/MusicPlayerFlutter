@@ -1,4 +1,4 @@
-class Mp3Model {
+class MusicModel {
   final String path;
   final String displayName;
   final String album;
@@ -8,7 +8,7 @@ class Mp3Model {
   final String size;
   final String duration;
 
-  Mp3Model({
+  MusicModel({
     required this.path,
     required this.displayName,
     required this.album,
@@ -19,7 +19,7 @@ class Mp3Model {
     required this.duration,
   });
 
-  factory Mp3Model.fromJson(Map<String, dynamic> json) => Mp3Model(
+  factory MusicModel.fromJson(Map<String, dynamic> json) => MusicModel(
         path: json["path"],
         // displayName: json["displayName"],
         displayName: "",

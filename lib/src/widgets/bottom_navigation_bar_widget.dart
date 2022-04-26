@@ -29,6 +29,10 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           icon: Icon(Icons.search),
           label: 'Search',
         ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.favorite),
+          label: 'Favorites',
+        ),
       ],
       selectedItemColor: Colors.amber[800],
       onTap: _onItemTapped,

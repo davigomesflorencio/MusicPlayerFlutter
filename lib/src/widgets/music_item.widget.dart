@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_player/src/models/mp3_model.dart';
-import 'package:music_player/src/views/details/details_audio.view.dart';
+import 'package:music_player/src/models/music_model.dart';
+import 'package:music_player/src/views/details/details.view.dart';
 
 class Mp3Item extends StatelessWidget {
-  final Mp3Model mp3File;
+  final MusicModel mp3File;
 
   const Mp3Item({Key? key, required this.mp3File}) : super(key: key);
 
