@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:music_player/src/utils/pallete.dart';
-import 'package:music_player/src/views/list_audio/list_audio.view.dart';
+import 'package:music_player/src/views/playlist/playlist.binding.dart';
+import 'package:music_player/src/views/playlist/playlist.view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,10 +18,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Pallete.materialColor,
         //here is where the error resides
       ),
+      defaultTransition: Transition.native,
+      locale: const Locale('pt', 'BR'),
       initialRoute: '/list',
-      routes: {
-        '/list': (context) => const ListAudio(),
-      },
+      getPages: [
+        GetPage(
+          name: '/list',
+          page: () => const Playlist(),
+          binding: PlaylistBind(),
+        ),
+      ],
     );
   }
 }
