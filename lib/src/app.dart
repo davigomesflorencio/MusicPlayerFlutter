@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       title: 'MusicPlayer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Pallete.materialColor, //here is where the error resides
+        primarySwatch: Pallete.materialColor,
+        //here is where the error resides
       ),
       initialRoute: '/list',
       routes: {

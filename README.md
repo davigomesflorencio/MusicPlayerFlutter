@@ -34,11 +34,11 @@ Reprodutor de música utilizando Material Design em Flutter de código aberto
 
 [audioplayers] (https://pub.dev/packages/audioplayers)
 
-[path_provider_ex] (https://pub.dev/packages/path_provider_ex)
-
 [permission_handler] (https://pub.dev/packages/permission_handler)
 
 [flutter_audio_query] (https://pub.dev/packages/flutter_audio_query)
+
+[get] (https://pub.dev/packages/get)
 
 ## Começando
 

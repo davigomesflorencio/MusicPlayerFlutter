@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:music_player/src/utils/pallete.dart';
 
 class ControlsAudio extends StatefulWidget {
   final AudioPlayer player;
@@ -18,7 +19,7 @@ class _ControlsAudioState extends State<ControlsAudio> {
   bool isPlaying = false;
   bool isPaused = false;
   bool isRepeat = false;
-  Color color = Colors.black;
+  Color color = Pallete.backgroundDetails;
   final List<IconData> _icons = [
     Icons.play_circle_fill,
     Icons.pause_circle_filled,
@@ -61,8 +62,8 @@ class _ControlsAudioState extends State<ControlsAudio> {
     return IconButton(
       padding: const EdgeInsets.only(bottom: 10),
       icon: isPlaying == false
-          ? Icon(_icons[0], size: 50, color: Colors.black)
-          : Icon(_icons[1], size: 50, color: Colors.pink),
+          ? Icon(_icons[0], size: 50, color: color)
+          : Icon(_icons[1], size: 50, color: Colors.white),
       onPressed: () {
         if (isPlaying == false) {
           widget.player.play(widget.audioPath, isLocal: true);
@@ -84,7 +85,7 @@ class _ControlsAudioState extends State<ControlsAudio> {
       icon: const ImageIcon(
         AssetImage('assets/images/forward.png'),
         size: 15,
-        color: Colors.black,
+        color: Colors.white,
       ),
       onPressed: () {
         widget.player.setPlaybackRate(1.5);
@@ -97,7 +98,7 @@ class _ControlsAudioState extends State<ControlsAudio> {
       icon: const ImageIcon(
         AssetImage('assets/images/backword.png'),
         size: 15,
-        color: Colors.black,
+        color: Colors.white,
       ),
       onPressed: () {
         widget.player.setPlaybackRate(0.5);
@@ -110,7 +111,7 @@ class _ControlsAudioState extends State<ControlsAudio> {
       icon: const ImageIcon(
         AssetImage('assets/images/loop.png'),
         size: 15,
-        color: Colors.black,
+        color: Colors.white,
       ),
       onPressed: () {},
     );
@@ -121,7 +122,7 @@ class _ControlsAudioState extends State<ControlsAudio> {
       icon: const ImageIcon(
         AssetImage('assets/images/repeat.png'),
         size: 15,
-        color: Colors.black,
+        color: Colors.white,
       ),
       onPressed: () {
         if (isRepeat == false) {
@@ -143,7 +144,7 @@ class _ControlsAudioState extends State<ControlsAudio> {
     return Slider(
         activeColor: Colors.black,
         inactiveColor: Colors.grey,
-        thumbColor: Colors.pink,
+        thumbColor: color,
         value: _position.inSeconds.toDouble(),
         min: 0.0,
         max: _duration.inSeconds.toDouble(),
@@ -175,8 +176,7 @@ class _ControlsAudioState extends State<ControlsAudio> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Column(
+    return Column(
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
@@ -185,11 +185,14 @@ class _ControlsAudioState extends State<ControlsAudio> {
             children: [
               Text(
                 _position.toString().split(".")[0],
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16, color: Colors.white),
               ),
               Text(
                 _duration.toString().split(".")[0],
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),
@@ -197,6 +200,6 @@ class _ControlsAudioState extends State<ControlsAudio> {
         slider(),
         loadAsset(),
       ],
-    ));
+    );
   }
 }
