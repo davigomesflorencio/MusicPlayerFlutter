@@ -2,13 +2,13 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/src/models/mp3_model.dart';
+import 'package:music_player/src/models/music_model.dart';
 import 'package:music_player/src/utils/pallete.dart';
-import 'package:music_player/src/utils/text_style.dart';
-import 'package:music_player/src/views/details/controls_audio.view.dart';
+import 'package:music_player/src/utils/text.style.dart';
+import 'package:music_player/src/views/details/controls.view.dart';
 
 class DetailsAudio extends StatefulWidget {
-  final Mp3Model mp3model;
+  final MusicModel mp3model;
   const DetailsAudio({Key? key, required this.mp3model}) : super(key: key);
 
   @override
