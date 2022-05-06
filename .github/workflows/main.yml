@@ -22,8 +22,8 @@ jobs:
     - run: flutter pub get
     # - run: flutter test
     - run: flutter build apk --debug --split-per-abi --no-sound-null-safety
-    - uses: actions/upload-artifact@v1
-      with:
-        name: apk
-        path: app/build/outputs/apk/debug/app-x86_64-debug.apk
+    # - uses: actions/upload-artifact@v1
+    #   with:
+    #     name: apk
+    #     path: app/build/outputs/apk/debug/app-x86_64-debug.apk
         
