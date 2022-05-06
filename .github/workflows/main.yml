@@ -20,8 +20,7 @@ jobs:
     - run: flutter pub get
     # - run: flutter test
     - run: flutter build apk --debug --split-per-abi --no-sound-null-safety
-    - name: Create a Release APK
-      uses: ncipollo/release-action@v1
+    - uses: actions/upload-artifact@v1
       with:
-        artifacts: "build/app/outputs/apk/debug/*.apk"
-        token: ${{ secrets.TOKEN }}
+        name: release-apk
+        path: build/app/outputs/apk/release/app-release.apk 

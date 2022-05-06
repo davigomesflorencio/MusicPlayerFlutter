@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:music_player/src/data/models/music_model.dart';
 import 'package:music_player/src/modules/details/details.view.dart';
 
-class Mp3Item extends StatelessWidget {
+class MusicItem extends StatelessWidget {
   final MusicModel mp3File;
 
-  const Mp3Item({Key? key, required this.mp3File}) : super(key: key);
+  const MusicItem({Key? key, required this.mp3File}) : super(key: key);
 
   String formatTime(String s) {
     int seconds = (int.parse(s) / 1000).floor();

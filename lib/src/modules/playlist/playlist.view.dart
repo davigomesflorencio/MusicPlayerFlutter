@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:music_player/src/core/values/pallete.dart';
 import 'package:music_player/src/core/values/text.style.dart';
 import 'package:music_player/src/data/models/list_music_model.dart';
-import 'package:music_player/src/global_widgets/bottom_navigation_bar_widget.dart';
+import 'package:music_player/src/global_widgets/bottom_nav_bar.widget.dart';
 import 'package:music_player/src/global_widgets/music_item.widget.dart';
 import 'package:music_player/src/modules/controllers/playback.dart';
 
@@ -118,7 +118,7 @@ class _PlaylistState extends State<Playlist> {
           ],
         ),
       ),
-      bottomNavigationBar: const MyBottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 
@@ -129,7 +129,7 @@ class _PlaylistState extends State<Playlist> {
       physics: const BouncingScrollPhysics(),
       itemCount: musics.playlist.length,
       itemBuilder: (context, index) {
-        return Mp3Item(mp3File: musics.playlist[index]);
+        return MusicItem(mp3File: musics.playlist[index]);
       },
     );
   }
