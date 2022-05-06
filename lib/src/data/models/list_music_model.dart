@@ -1,4 +1,4 @@
-import 'package:music_player/src/models/music_model.dart';
+import 'package:music_player/src/data/models/music_model.dart';
 
 class ListMusicModel {
   List<MusicModel> playlist = List<MusicModel>.empty();

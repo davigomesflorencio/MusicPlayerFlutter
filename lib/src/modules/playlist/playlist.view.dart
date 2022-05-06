@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_player/src/controllers/playback.dart';
-import 'package:music_player/src/models/list_music_model.dart';
-import 'package:music_player/src/utils/pallete.dart';
-import 'package:music_player/src/utils/text.style.dart';
-import 'package:music_player/src/widgets/bottom_navigation_bar_widget.dart';
-import 'package:music_player/src/widgets/music_item.widget.dart';
+import 'package:music_player/src/core/values/pallete.dart';
+import 'package:music_player/src/core/values/text.style.dart';
+import 'package:music_player/src/data/models/list_music_model.dart';
+import 'package:music_player/src/global_widgets/bottom_navigation_bar_widget.dart';
+import 'package:music_player/src/global_widgets/music_item.widget.dart';
+import 'package:music_player/src/modules/controllers/playback.dart';
 
 class Playlist extends StatefulWidget {
   const Playlist({Key? key}) : super(key: key);

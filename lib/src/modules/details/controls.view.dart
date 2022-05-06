@@ -1,6 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/src/utils/pallete.dart';
+import 'package:music_player/src/core/values/pallete.dart';
 
 class ControlsAudio extends StatefulWidget {
   final AudioPlayer player;

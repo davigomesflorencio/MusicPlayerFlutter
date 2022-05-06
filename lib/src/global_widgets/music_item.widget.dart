@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_player/src/models/music_model.dart';
-import 'package:music_player/src/views/details/details.view.dart';
+import 'package:music_player/src/data/models/music_model.dart';
+import 'package:music_player/src/modules/details/details.view.dart';
 
 class Mp3Item extends StatelessWidget {
   final MusicModel mp3File;

@@ -1,7 +1,7 @@
 import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:get/get.dart';
-import 'package:music_player/src/models/list_music_model.dart';
-import 'package:music_player/src/models/music_model.dart';
+import 'package:music_player/src/data/models/list_music_model.dart';
+import 'package:music_player/src/data/models/music_model.dart';
 
 class PlaybackController extends GetxController {
   final Rx<ListMusicModel> musics =

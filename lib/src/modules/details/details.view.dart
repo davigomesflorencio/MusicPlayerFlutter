@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/src/models/music_model.dart';
-import 'package:music_player/src/utils/pallete.dart';
-import 'package:music_player/src/utils/text.style.dart';
-import 'package:music_player/src/views/details/controls.view.dart';
+import 'package:music_player/src/data/models/music_model.dart';
+import 'package:music_player/src/core/values/pallete.dart';
+import 'package:music_player/src/core/values/text.style.dart';
+import 'package:music_player/src/modules/details/controls.view.dart';
 
 class DetailsAudio extends StatefulWidget {
   final MusicModel mp3model;
