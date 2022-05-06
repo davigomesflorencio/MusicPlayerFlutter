@@ -11,7 +11,8 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '2.16.1'
+        channel: 'beta' # 'dev', 'alpha', default to: 'stable'
+        # flutter-version: '1.12.x' # you can also specify exact version of flutter
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk --debug --split-per-abi
