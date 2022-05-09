@@ -1,9 +1,9 @@
 on:
   push:
-    # branches:
-      # - master
-    tags:
-      - 'v*'
+    branches:
+      - master
+#     tags:
+#       - 'v*'
 
 name: Test, Build and Release apk
 jobs:
