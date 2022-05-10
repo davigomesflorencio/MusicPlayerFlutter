@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Pallete.materialColor,
-        //here is where the error resides
       ),
       defaultTransition: Transition.native,
       locale: const Locale('pt', 'BR'),
