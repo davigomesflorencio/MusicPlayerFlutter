@@ -49,73 +49,76 @@ class _PlaylistState extends State<Playlist> {
       ),
       backgroundColor: Pallete.background,
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  height: 45,
-                  width: _size.width * 0.4,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      controller.serchSongs();
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
-                        Icon(
-                          Icons.play_arrow,
-                          color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 45,
+                    width: _size.width * 0.4,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        controller.serchSongs();
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          Icon(
+                            Icons.play_arrow,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "Play",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                        Text(
-                          "Play",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 45,
-                  width: _size.width * 0.4,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
-                        Icon(Icons.shuffle, color: Colors.white),
-                        Text(
-                          "Shuffle",
-                          style: TextStyle(color: Colors.white),
+                  SizedBox(
+                    height: 45,
+                    width: _size.width * 0.4,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          Icon(Icons.shuffle, color: Colors.white),
+                          Text(
+                            "Shuffle",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                      ],
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Obx(() {
-              ListMusicModel musics = controller.musics.value;
-              if (musics.playlist.isEmpty) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              } else {
-                return _buildPlaylist(musics);
-              }
-            }),
-          ],
+                ],
+              ),
+              Obx(() {
+                ListMusicModel musics = controller.musics.value;
+                if (musics.playlist.isEmpty) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else {
+                  return _buildPlaylist(musics);
+                }
+              }),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const BottomNavBar(),

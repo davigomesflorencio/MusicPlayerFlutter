@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:music_player/src/data/models/music_model.dart';
 import 'package:music_player/src/core/values/pallete.dart';
 import 'package:music_player/src/core/values/text.style.dart';
@@ -65,13 +66,13 @@ class _DetailsAudioState extends State<DetailsAudio> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               actions: const <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: Icon(
-                    Icons.queue_music,
-                    color: Colors.white,
-                  ),
-                )
+                // Padding(
+                //   padding: EdgeInsets.all(12.0),
+                //   child: Icon(
+                //     Icons.queue_music,
+                //     color: Colors.white,
+                //   ),
+                // )
               ],
             ),
           ),
@@ -96,15 +97,14 @@ class _DetailsAudioState extends State<DetailsAudio> {
                         ),
                       )
                     : Container(
-                        height: _size.height * 0.35,
-                        width: _size.height * 0.35,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: ExactAssetImage("assets/images/sound.jpg"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                        height: _size.height * 0.4,
+                        width: _size.height * 0.4,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: ExactAssetImage("assets/images/sound.jpg"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(20)),
                       ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
