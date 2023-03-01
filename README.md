@@ -2,12 +2,20 @@
 
 Reprodutor de música utilizando Material Design em Flutter de código aberto
 
+## Tecnologias utilizadas
+
+<div class="center">
+    <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white"/>
+</div>
+
 ## Características
 
-- [x] Android (iOS Coming Soon)
+- [x] Android
 
-  - [x] Buscar músicas locais (Inbuilt Permission)
-  - [ ] Interface do usuário linda com vários temas (Em breve)
+  - [x] Buscar músicas locais
+  - [ ] Interface do usuário linda com vários temas
   - [ ] Animação
   - [x] arquivos locais
   - [x] parar
@@ -24,9 +32,9 @@ Reprodutor de música utilizando Material Design em Flutter de código aberto
 
 ## Capturas de tela
 
+<!-- <img src="" altura="300em" />
 <img src="" altura="300em" />
-<img src="" altura="300em" />
-<img src="" altura="300em" /> <
+<img src="" altura="300em" />  -->
 
 ## Dependências
 
