@@ -6,12 +6,12 @@ import 'package:music_player/src/modules/details/details.view.dart';
 class MusicItem extends StatelessWidget {
   final MusicModel mp3File;
 
-  const MusicItem({Key? key, required this.mp3File}) : super(key: key);
+  const MusicItem({key, this.mp3File}) : super(key: key);
 
   String formatTime(String s) {
     int seconds = (int.parse(s) / 1000).floor();
-    Duration _duration = Duration(seconds: seconds);
-    String parsedTime = _duration.toString().split(".")[0];
+    Duration duration = Duration(seconds: seconds);
+    String parsedTime = duration.toString().split(".")[0];
     return parsedTime;
   }
 
@@ -37,7 +37,7 @@ class MusicItem extends StatelessWidget {
       subtitle: Text(
         mp3File.artist == null
             ? "Uknown"
-            : mp3File.artist + " - " + formatTime(mp3File.duration),
+            : "${mp3File.artist} - ${formatTime(mp3File.duration)}",
         style: const TextStyle(
           fontSize: 10.0,
           color: Colors.grey,

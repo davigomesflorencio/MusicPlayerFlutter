@@ -7,7 +7,7 @@ import 'package:music_player/src/modules/bindings/playlist.binding.dart';
 import 'package:music_player/src/modules/playlist/playlist.view.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:music_player/src/data/models/music_model.dart';
 import 'package:music_player/src/core/values/pallete.dart';
 import 'package:music_player/src/core/values/text.style.dart';
@@ -10,14 +9,14 @@ import 'package:music_player/src/modules/details/controls.view.dart';
 
 class DetailsAudio extends StatefulWidget {
   final MusicModel mp3model;
-  const DetailsAudio({Key? key, required this.mp3model}) : super(key: key);
+  const DetailsAudio({Key key, this.mp3model}) : super(key: key);
 
   @override
   State<DetailsAudio> createState() => _DetailsAudioState();
 }
 
 class _DetailsAudioState extends State<DetailsAudio> {
-  late AudioPlayer player;
+  AudioPlayer player;
 
   @override
   void initState() {
@@ -27,7 +26,7 @@ class _DetailsAudioState extends State<DetailsAudio> {
 
   @override
   Widget build(BuildContext context) {
-    var _size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: Pallete.background,
@@ -38,7 +37,7 @@ class _DetailsAudioState extends State<DetailsAudio> {
             right: 0,
             left: 0,
             child: Container(
-              height: _size.height * 0.32,
+              height: size.height * 0.32,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(25.0),
@@ -77,15 +76,15 @@ class _DetailsAudioState extends State<DetailsAudio> {
             ),
           ),
           Positioned(
-            top: _size.height * 0.15,
+            top: size.height * 0.15,
             right: 0,
             left: 0,
             child: Column(
               children: <Widget>[
                 widget.mp3model.albumImage != null
                     ? Container(
-                        height: _size.height * 0.35,
-                        width: _size.height * 0.35,
+                        height: size.height * 0.35,
+                        width: size.height * 0.35,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
@@ -97,10 +96,10 @@ class _DetailsAudioState extends State<DetailsAudio> {
                         ),
                       )
                     : Container(
-                        height: _size.height * 0.4,
-                        width: _size.height * 0.4,
+                        height: size.height * 0.4,
+                        width: size.height * 0.4,
                         decoration: BoxDecoration(
-                            image: DecorationImage(
+                            image: const DecorationImage(
                               image: ExactAssetImage("assets/images/sound.jpg"),
                               fit: BoxFit.cover,
                             ),

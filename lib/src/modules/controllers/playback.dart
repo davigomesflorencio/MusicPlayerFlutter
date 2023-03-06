@@ -6,7 +6,7 @@ import 'package:music_player/src/data/models/music_model.dart';
 class PlaybackController extends GetxController {
   final Rx<ListMusicModel> musics =
       ListMusicModel(playlist: RxList<MusicModel>.empty(growable: true)).obs;
-  late List<SongInfo> songs;
+  List<SongInfo> songs;
 
   final FlutterAudioQuery _audioQuery = FlutterAudioQuery();
 

@@ -9,14 +9,14 @@ class MusicModel {
   final String duration;
 
   MusicModel({
-    required this.path,
-    required this.displayName,
-    required this.album,
-    required this.albumImage,
-    required this.artist,
-    required this.dateAdded,
-    required this.size,
-    required this.duration,
+    this.path,
+    this.displayName,
+    this.album,
+    this.albumImage,
+    this.artist,
+    this.dateAdded,
+    this.size,
+    this.duration,
   });
 
   factory MusicModel.fromJson(Map<String, dynamic> json) => MusicModel(

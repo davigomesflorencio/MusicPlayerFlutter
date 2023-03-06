@@ -8,7 +8,7 @@ import 'package:music_player/src/global_widgets/music_item.widget.dart';
 import 'package:music_player/src/modules/controllers/playback.dart';
 
 class Playlist extends StatefulWidget {
-  const Playlist({Key? key}) : super(key: key);
+  const Playlist({key}) : super(key: key);
 
   @override
   State<Playlist> createState() => _PlaylistState();
@@ -23,7 +23,7 @@ class _PlaylistState extends State<Playlist> {
 
   @override
   Widget build(BuildContext context) {
-    var _size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
@@ -58,7 +58,7 @@ class _PlaylistState extends State<Playlist> {
                 children: [
                   SizedBox(
                     height: 45,
-                    width: _size.width * 0.4,
+                    width: size.width * 0.4,
                     child: ElevatedButton(
                       onPressed: () {
                         controller.serchSongs();
@@ -85,9 +85,14 @@ class _PlaylistState extends State<Playlist> {
                   ),
                   SizedBox(
                     height: 45,
-                    width: _size.width * 0.4,
+                    width: size.width * 0.4,
                     child: ElevatedButton(
                       onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const <Widget>[
@@ -97,11 +102,6 @@ class _PlaylistState extends State<Playlist> {
                             style: TextStyle(color: Colors.white),
                           ),
                         ],
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
                       ),
                     ),
                   ),
