@@ -1,14 +1,14 @@
-import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:get/get.dart';
 import 'package:music_player/src/data/models/list_music_model.dart';
 import 'package:music_player/src/data/models/music_model.dart';
+import 'package:on_audio_query/on_audio_query.dart';
 
 class PlaybackController extends GetxController {
   final Rx<ListMusicModel> musics =
       ListMusicModel(playlist: RxList<MusicModel>.empty(growable: true)).obs;
-  List<SongInfo> songs;
+  late List<SongModel> songs;
 
-  final FlutterAudioQuery _audioQuery = FlutterAudioQuery();
+  final OnAudioQuery _audioQuery = OnAudioQuery();
 
   @override
   void onInit() {
@@ -17,17 +17,17 @@ class PlaybackController extends GetxController {
   }
 
   serchSongs() async {
-    songs = await _audioQuery.getSongs();
+    songs = await _audioQuery.querySongs();
     for (var song in songs) {
       var model = MusicModel(
-        album: song.album,
-        albumImage: song.albumArtwork,
+        album: song.album ?? "",
+        albumImage: song.album ?? "",
         displayName: song.displayName,
-        duration: song.duration,
-        path: song.filePath,
-        artist: song.artist,
-        dateAdded: song.year,
-        size: song.fileSize,
+        duration: song.duration.toString(),
+        path: song.uri!,
+        artist: song.artist!,
+        dateAdded: song.dateAdded.toString(),
+        size: song.size.toString(),
       );
       if (model.path.contains(".mp3") == true &&
           model.path.contains("O SEU") == false &&

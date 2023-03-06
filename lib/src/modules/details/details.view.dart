@@ -9,14 +9,14 @@ import 'package:music_player/src/modules/details/controls.view.dart';
 
 class DetailsAudio extends StatefulWidget {
   final MusicModel mp3model;
-  const DetailsAudio({Key key, this.mp3model}) : super(key: key);
+  const DetailsAudio({Key? key, required this.mp3model}) : super(key: key);
 
   @override
   State<DetailsAudio> createState() => _DetailsAudioState();
 }
 
 class _DetailsAudioState extends State<DetailsAudio> {
-  AudioPlayer player;
+  late AudioPlayer player;
 
   @override
   void initState() {

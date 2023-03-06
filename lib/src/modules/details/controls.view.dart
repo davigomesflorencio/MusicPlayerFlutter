@@ -6,7 +6,8 @@ class ControlsAudio extends StatefulWidget {
   final AudioPlayer player;
   final String audioPath;
 
-  const ControlsAudio({key, this.player, this.audioPath}) : super(key: key);
+  const ControlsAudio({key, required this.player, required this.audioPath})
+      : super(key: key);
 
   @override
   State<ControlsAudio> createState() => _ControlsAudioState();

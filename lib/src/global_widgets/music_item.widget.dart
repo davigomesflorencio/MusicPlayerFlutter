@@ -6,7 +6,7 @@ import 'package:music_player/src/modules/details/details.view.dart';
 class MusicItem extends StatelessWidget {
   final MusicModel mp3File;
 
-  const MusicItem({key, this.mp3File}) : super(key: key);
+  const MusicItem({key, required this.mp3File}) : super(key: key);
 
   String formatTime(String s) {
     int seconds = (int.parse(s) / 1000).floor();
