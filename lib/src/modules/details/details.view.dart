@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -81,29 +82,18 @@ class _DetailsAudioState extends State<DetailsAudio> {
             left: 0,
             child: Column(
               children: <Widget>[
-                widget.mp3model.albumImage != null
-                    ? Container(
-                        height: size.height * 0.35,
-                        width: size.height * 0.35,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: FileImage(
-                              File(widget.mp3model.albumImage),
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      )
+                widget.mp3model.albumImage!.isNotEmpty
+                    ? buildImageWidget(widget.mp3model.albumImage!)
                     : Container(
                         height: size.height * 0.4,
                         width: size.height * 0.4,
                         decoration: BoxDecoration(
-                            image: const DecorationImage(
-                              image: ExactAssetImage("assets/images/sound.jpg"),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: BorderRadius.circular(20)),
+                          image: const DecorationImage(
+                            image: ExactAssetImage("assets/images/sound.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                       ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -128,13 +118,25 @@ class _DetailsAudioState extends State<DetailsAudio> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: ControlsAudio(
-                      player: player, audioPath: widget.mp3model.path),
+                    player: player,
+                    audioPath: widget.mp3model.path,
+                  ),
                 ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Image buildImageWidget(Uint8List imageBytes) {
+    var size = MediaQuery.of(context).size;
+    return Image.memory(
+      imageBytes,
+      height: size.height * 0.4,
+      width: size.height * 0.4,
+      fit: BoxFit.cover,
     );
   }
 }

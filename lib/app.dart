@@ -15,9 +15,18 @@ class MyApp extends StatelessWidget {
       title: 'MusicPlayer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Pallete.materialColor,
+        colorScheme: ColorScheme.fromSeed(seedColor: Pallete.background),
+        useMaterial3: true,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        appBarTheme: const AppBarTheme(centerTitle: true, elevation: 2),
+        cardTheme: CardTheme(
+          elevation: 4,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        fontFamily: 'Inter',
       ),
-      defaultTransition: Transition.native,
       locale: const Locale('pt', 'BR'),
       initialRoute: '/list',
       getPages: [
@@ -27,6 +36,8 @@ class MyApp extends StatelessWidget {
           binding: PlaylistBind(),
         ),
       ],
+      defaultTransition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 300),
     );
   }
 }

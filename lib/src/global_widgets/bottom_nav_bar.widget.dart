@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/src/core/values/pallete.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({key}) : super(key: key);
@@ -35,6 +36,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
       ],
       selectedItemColor: Colors.amber[800],
+      unselectedItemColor: Colors.white,
+      backgroundColor: Pallete.background,
       onTap: _onItemTapped,
     );
   }

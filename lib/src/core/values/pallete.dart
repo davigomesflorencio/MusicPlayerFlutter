@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Pallete {
   static const primary = 0xFFbff8f00;
-  static const background = Color(0xFF0c135b);
+  static const background = Color(0xFF0d0d0d);
   static const backgroundDetails = Color(0xFFff8f00);
   static const backgroundDetailsDark = Color(0xFFc56000);
   static const sliverBackground = Color(0xFFfafafc);
@@ -16,6 +16,7 @@ class Pallete {
   static const audioBluishBackground = Color(0xFfdee7fa);
   static const audioBlueBackground = Color(0xFF04abe7);
   static const audioGreyBackground = Color(0xFFf2f2f2);
+  static const bt = Color(0XFFc2c2c2);
 
   static const MaterialColor materialColor = MaterialColor(
     primary, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.

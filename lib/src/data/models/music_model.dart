@@ -1,8 +1,10 @@
+import 'dart:typed_data';
+
 class MusicModel {
   final String path;
   final String displayName;
   final String album;
-  final String albumImage;
+  final Uint8List? albumImage;
   final String artist;
   final String dateAdded;
   final String size;
@@ -26,7 +28,7 @@ class MusicModel {
         // album: json["album"],
         album: "",
         // albumImage: json["albumImage"],
-        albumImage: "",
+        albumImage: null,
         // artist: json["artist"],
         artist: "",
         // dateAdded: json["dateAdded"],

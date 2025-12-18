@@ -39,13 +39,13 @@ class _ControlsAudioState extends State<ControlsAudio> {
         _duration = d;
       });
     });
-    widget.player.onAudioPositionChanged.listen((p) {
+    widget.player.onPositionChanged.listen((p) {
       setState(() {
         _position = p;
       });
     });
     // widget.player.setUrl(widget.audioPath);
-    widget.player.onPlayerCompletion.listen((event) {
+    widget.player.onPlayerComplete.listen((event) {
       setState(() {
         _position = const Duration(seconds: 0);
         if (isRepeat == true) {
@@ -65,16 +65,24 @@ class _ControlsAudioState extends State<ControlsAudio> {
           ? Icon(_icons[0], size: 50, color: color)
           : Icon(_icons[1], size: 50, color: Colors.white),
       onPressed: () {
-        if (isPlaying == false) {
-          widget.player.play(widget.audioPath, isLocal: true);
-          setState(() {
-            isPlaying = true;
-          });
-        } else if (isPlaying == true) {
-          widget.player.pause();
-          setState(() {
-            isPlaying = false;
-          });
+        try {
+          if (isPlaying == false) {
+            widget.player.play(DeviceFileSource(widget.audioPath));
+            setState(() {
+              isPlaying = true;
+            });
+          } else if (isPlaying == true) {
+            widget.player.pause();
+            setState(() {
+              isPlaying = false;
+            });
+          }
+        } catch (e) {
+          print('Error playing audio: $e');
+          // Show error to user
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Error playing audio: $e')),
+          );
         }
       },
     );
@@ -126,13 +134,13 @@ class _ControlsAudioState extends State<ControlsAudio> {
       ),
       onPressed: () {
         if (isRepeat == false) {
-          widget.player.setReleaseMode(ReleaseMode.LOOP);
+          widget.player.setReleaseMode(ReleaseMode.loop);
           setState(() {
             isRepeat = true;
             color = Colors.black;
           });
         } else if (isRepeat == true) {
-          widget.player.setReleaseMode(ReleaseMode.RELEASE);
+          widget.player.setReleaseMode(ReleaseMode.release);
           color = Colors.pink;
           isRepeat = false;
         }

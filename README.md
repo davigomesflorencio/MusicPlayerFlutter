@@ -38,15 +38,19 @@ Reprodutor de música utilizando Material Design em Flutter de código aberto
 
 ## Dependências
 
-[cupertino_icons] (https://pub.dev/packages/cupertino_icons)
+[cupertino_icons](https://pub.dev/packages/cupertino_icons)
 
-[audioplayers] (https://pub.dev/packages/audioplayers)
+[audioplayers](https://pub.dev/packages/audioplayers)
 
-[permission_handler] (https://pub.dev/packages/permission_handler)
+[permission_handler](https://pub.dev/packages/permission_handler)
 
-[flutter_audio_query] (https://pub.dev/packages/flutter_audio_query)
+[get](https://pub.dev/packages/get)
 
-[get] (https://pub.dev/packages/get)
+[path_provider](https://pub.dev/packages/path_provider)
+
+[device_info_plus](https://pub.dev/packages/device_info_plus)
+
+[aura_music_kit](https://pub.dev/packages/aura_music_kit)
 
 ## Começando
 
