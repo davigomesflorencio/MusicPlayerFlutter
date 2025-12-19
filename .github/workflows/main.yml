@@ -18,7 +18,7 @@ jobs:
           java-version: '17'
       - uses: subosito/flutter-action@v2  # Atualizado para v2
         with:
-          channel: 'beta'
+          channel: 'stable'
       - run: flutter pub get
       # - run: flutter test
       - run: flutter build apk --release
